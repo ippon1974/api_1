@@ -37,6 +37,11 @@ gradle-app.setting
 ##############################
 ## IntelliJ
 ##############################
+target/classes
+.settings/
+.apt_generated
+.sts4-cache
+.springBeans
 out/
 .idea/
 .idea_modules/
