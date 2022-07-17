@@ -56,7 +56,6 @@ public class UserController {
         }
     }
 
-
     @PutMapping("/{id}")
     public ResponseEntity updateUser(@RequestBody UserEntity newuser, @PathVariable Long id) {
         try {
