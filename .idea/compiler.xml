@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api_1" target="11" />
+      <module name="api_1" target="18" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
