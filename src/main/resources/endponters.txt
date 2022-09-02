@@ -1,3 +1,5 @@
 http://localhost:8080/users         add user to method POST json {"username": "osel", "password": 12345}
 http://localhost:8080/users?id=1    get user id method GET
 localhost:8080/todos?userId=1       add todos for user method POST
+localhost:8080/test/all             get all list test table method GET
+

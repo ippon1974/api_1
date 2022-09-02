@@ -37,11 +37,12 @@ public class UserController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public List<UserEntity> getAll(){
         return userService.findAllElements();
     }
+
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
