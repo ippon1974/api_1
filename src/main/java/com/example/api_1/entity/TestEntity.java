@@ -13,8 +13,10 @@ public class TestEntity {
 
     private String username;
 
-    @JsonIgnore
     private String city;
+
+    @JsonIgnore
+    private boolean is_published;
 
     public TestEntity() {
     }
@@ -41,5 +43,13 @@ public class TestEntity {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public boolean isIs_published() {
+        return is_published;
+    }
+
+    public void setIs_published(boolean is_published) {
+        this.is_published = is_published;
     }
 }
