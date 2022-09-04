@@ -1,18 +1,17 @@
 package com.example.api_1.controller;
 
 import com.example.api_1.entity.TestEntity;
-import com.example.api_1.entity.UserEntity;
-import com.example.api_1.model.Test;
+import com.example.api_1.exception.TestNotFoundException;
+import com.example.api_1.exception.UserNotFoundException;
 import com.example.api_1.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -29,6 +28,26 @@ public class TestController {
     public List<TestEntity> getAll(){
         return testService.findAllElements();
     }
+
+
+    @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity getOneUser(@RequestParam long id){
+        try {
+            return ResponseEntity.ok(testService.getOne(id));
+        }catch (TestNotFoundException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body("Произщшла ошибка");
+        }
+    }
+
+
+
+
+
+
 
 
 

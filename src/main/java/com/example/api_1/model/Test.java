@@ -2,12 +2,10 @@ package com.example.api_1.model;
 
 import com.example.api_1.entity.TestEntity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test {
     private long id;
     private String name;
+    private String city;
 
     public Test() {
     }
@@ -28,10 +26,19 @@ public class Test {
         this.name = name;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public static Test toModel(TestEntity testEntity){
         Test model = new Test();
         model.setId(testEntity.getId());
         model.setName(testEntity.getUsername());
+        model.setCity(testEntity.getCity());
         return model;
     }
 
