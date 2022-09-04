@@ -8,6 +8,7 @@ import com.example.api_1.model.Test;
 import com.example.api_1.model.User;
 import com.example.api_1.repository.TestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,8 +19,10 @@ public class TestService {
     private TestRepo testRepo;
 
     public List<TestEntity> findAllElements() {
-        return testRepo.findAll();
+        //return testRepo.findAllByOrderByIdDesc();
+        return testRepo.findAll(Sort.by(Sort.Direction.ASC, "id"));
     }
+
 
     public Test getOne(Long id) throws TestNotFoundException {
         TestEntity test = testRepo.findById(id).get();
@@ -28,6 +31,8 @@ public class TestService {
         }
         return Test.toModel(test);
     }
+
+
 
 }
 

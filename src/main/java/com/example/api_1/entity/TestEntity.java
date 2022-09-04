@@ -15,7 +15,6 @@ public class TestEntity {
 
     private String city;
 
-
     @JsonIgnore
     private boolean is_published;
 
