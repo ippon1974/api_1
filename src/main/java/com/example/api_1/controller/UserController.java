@@ -7,7 +7,6 @@ import com.example.api_1.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity registration(@RequestBody UserEntity user){
         try {
-           userService.registration(user);
+            userService.registration(user);
             return ResponseEntity.ok("Пользователь успешно сохранен");
         }catch (UserAlreadyExistExeption e){
             return ResponseEntity.badRequest().body(e.getMessage());

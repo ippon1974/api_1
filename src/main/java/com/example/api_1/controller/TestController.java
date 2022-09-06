@@ -1,8 +1,8 @@
 package com.example.api_1.controller;
 
 import com.example.api_1.entity.TestEntity;
+import com.example.api_1.exception.TestAlreadyExistExeption;
 import com.example.api_1.exception.TestNotFoundException;
-import com.example.api_1.exception.UserNotFoundException;
 import com.example.api_1.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,6 +35,20 @@ public class TestController {
         try {
             return ResponseEntity.ok(testService.getOne(id));
         }catch (TestNotFoundException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().body("Произщшла ошибка");
+        }
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity registration(@RequestBody TestEntity user){
+        try {
+            testService.registration(user);
+            return ResponseEntity.ok("Пользователь успешно сохранен");
+        }catch (TestAlreadyExistExeption e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
         catch (Exception e){
