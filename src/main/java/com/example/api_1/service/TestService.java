@@ -1,16 +1,11 @@
 package com.example.api_1.service;
 
 import com.example.api_1.entity.TestEntity;
-import com.example.api_1.entity.UserEntity;
 import com.example.api_1.exception.TestAlreadyExistExeption;
 import com.example.api_1.exception.TestNotFoundException;
-import com.example.api_1.exception.UserAlreadyExistExeption;
-import com.example.api_1.exception.UserNotFoundException;
 import com.example.api_1.model.Test;
-import com.example.api_1.model.User;
 import com.example.api_1.repository.TestRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
