@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+//@CrossOrigin
+@CrossOrigin(origins = "http://23.105.246.179:3000")
 @RestController
 @RequestMapping("/test")
 public class TestController {
@@ -29,6 +30,7 @@ public class TestController {
         return testService.findAllElements();
     }
 
+//    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity getOneUser(@RequestParam long id){

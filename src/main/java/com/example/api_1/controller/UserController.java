@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -41,7 +42,6 @@ public class UserController {
     public List<UserEntity> getAll(){
         return userService.findAllElements();
     }
-
 
     @GetMapping()
     @ResponseStatus(HttpStatus.OK)
