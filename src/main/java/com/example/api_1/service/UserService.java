@@ -57,11 +57,9 @@ public class UserService {
 
     public User updateUser(Long id, UserEntity newuser) throws UserNotFoundException {
         UserEntity user = userRepo.findById(id).get();
-
         if(user == null) {
             throw new UserNotFoundException("Пользователь с таким ID не найден");
         }
-
         user.setUsername(newuser.getUsername());
         user.setPassword(newuser.getPassword());
         userRepo.save(newuser);
