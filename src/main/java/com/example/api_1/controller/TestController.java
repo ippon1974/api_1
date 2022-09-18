@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
-//@CrossOrigin(origins = "http://23.105.246.179:3000")
+//@CrossOrigin(origins = "http://localhost:3030")
+@CrossOrigin(origins = "http://23.105.246.179:3030")
 @RestController
 @RequestMapping("/test")
 public class TestController {
