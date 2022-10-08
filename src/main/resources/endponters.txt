@@ -3,4 +3,5 @@ http://localhost:8080/users?id=1    get user id method GET
 localhost:8080/todos?userId=1       add todos for user method POST
 localhost:8080/test/all             get all list test table method GET
 http://localhost:8080/test          add user to method POST json {"username": "Mudilkin", "city": "Oskol"}
+http://localhost:4300/airlines/all  get all airlines
 
