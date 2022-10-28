@@ -1,7 +1,7 @@
-http://localhost:8080/users         add user to method POST json {"username": "osel", "password": 12345}
-http://localhost:8080/users?id=1    get user id method GET
-localhost:8080/todos?userId=1       add todos for user method POST
-localhost:8080/test/all             get all list test table method GET
-http://localhost:8080/test          add user to method POST json {"username": "Mudilkin", "city": "Oskol"}
+http://localhost:4300/users         add user to method POST json {"username": "osel", "password": 12345}
+http://localhost:4300/users?id=1    get user id method GET
+localhost:4300/todos?userId=1       add todos for user method POST
+localhost:4300/test/all             get all list test table method GET
+http://localhost:4300/test          add user to method POST json {"username": "Mudilkin", "city": "Oskol"}
 http://localhost:4300/airlines/all  get all airlines
 
